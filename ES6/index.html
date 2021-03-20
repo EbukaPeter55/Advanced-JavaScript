@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+<body>
+    <script>
+        // DESTRUCTUING
+        const obj = {
+            player: 'bobby',
+            experience: 100,
+            wizardLevel: false
+        }
+
+    // Without destructuring
+    // const player = obj.player;
+    // const experience = obj.experience;
+    // const wizardLevel = obj.wizardLevel;
+
+    // Using object destructuring
+//     const {player, experience} = obj;    // Put whatever property you want inside the square brackets 
+//     const player = 'bobby';      //this allows each property to be a stand alone variable
+//     let { wizardLevel } = obj; //You now have access to wizardlevel property as a standalone variable.
+
+//     // OBJECT PROPERTIES
+//     const exa = {
+//         [1 + 2]: 'orange'
+//     }
+//   console.log(exa);
+
+    //DEFAULT 
+    // commenting these variables below will cause the function to make use of its default arguments
+    // const name = "Sally";
+    // const age = "24";
+    // const pet = "horse";
+
+function greet (name='', age=30, pet='cat'){
+    return `Hello ${name} you seem to be ${age-10}. What a lovely ${pet} you have`;
+}
+
+// SYMBOL
+// sometimes used in object properties to prevent bugs
+let sym1 = Symbol();
+let sym2 = Symbol('foo');
+let sym3 = Symbol ('foo');
+sym2 === sym3 //They are both not equal because symbol make use of a unique type
+
+// ARROW FUNCTION
+function add(a, b){
+    return a + b;
+}
+
+// // Using arrow function doesn't require the return keyword when it is just a single return,
+// check the function expression below
+const add2 = (a, b) => a + b;
+
+// Template strings
+const age = 6;
+const name = 'John';
+let check = () => {
+    return `My name is ${name}, I am ${age} years old`;
+}
+console.log(check());
+
+// Default arguments
+let defArguments = (age='', name='') => {
+return `My name is not ${name}, I am ${age=20} years old`;
+}
+console.log(defArguments());
+    </script>
+</body>
+</html>
