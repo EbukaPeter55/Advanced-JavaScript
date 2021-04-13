@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body>
+    
+
+ <script>
+const first = () => {
+const greet = 'Hi';
+const second = () => {
+    const name = 'Bobby';
+    alert (greet);
+}
+return second;
+}
+const newFunc = first();
+newFunc();
+
+//Closures: A function ran. The function executed. It's never going to run again.
+//But it remembers that there are references to those variables.
+//So the child scope always has an access to the parent scope. while parent does not have an access to the child scope.
+
+//So basically the scope within the child function expression(second) has an access to the parent function exp (first)
+//Therefore, when we run this on the console, the alert box displays Hi, that's the value of the parent scope variable greet 
+
+
+
+
+
+
+// CURRYING
+//Converting a function that takes multiple arguments into a functiont that takes one at a time.
+const multiply = (a, b) => a * b;
+const curriedMultiply = (a) => (b) => a * b;
+const multiplyBy5 = curriedMultiply(5);
+console.log(multiplyBy5(20));
+
+
+
+ </script>   
+</body>
+</html>
