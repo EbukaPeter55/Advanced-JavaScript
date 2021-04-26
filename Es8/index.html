@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es8</title>
+</head>
+<body>
+    .padStart()
+    .padEnd()
+    They are use to add padding 
+    <script>
+   ;
+   console.log('Turtle'.padStart(10));
+
+//    We can loop through an object and apply some array methods, using the ES8 object.entries, object.values and object.keys
+let obj = {
+    username0: 'Santa',
+    username1: 'Rudolf',
+    username3: 'Mr. Grinch'
+}
+// Using object.key Note that key is same thing as properties
+Object.keys(obj).forEach((key, index) => {
+    console.log(key, obj[key]);
+})
+// ALTERNATIVELY USING Object.values
+Object.values(obj).forEach(value => {
+    console.log(value);
+})
+// ALTERNATIVELY, Oject.entries, gives the result in an array
+Object.entries(obj).forEach(value => {
+    console.log(value);
+})
+// WE COULD REPLACE THE USERNAMES WITH Object.entries
+Object.entries(obj).map(value=>{
+    return value[1] + value[0].replace('username', '');
+})
+    </script>
+</body>
+</html>
